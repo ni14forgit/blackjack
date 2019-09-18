@@ -52,7 +52,7 @@ class Player():
     def winOrLoseMoney(self, dealerCount):
         myCount = self.calculateScore()
         if myCount == 21 and dealerCount != 21:
-            self.money += (3/2)*self.bet
+            self.money += int(1.5*self.bet)
         elif myCount <= 21:
             if dealerCount > 21:
                 self.money += self.bet

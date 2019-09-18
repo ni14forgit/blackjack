@@ -1,7 +1,6 @@
 import curses
 from card import Card
 from player import Player
-import time
 
 ''' BlackJack class handles main flow of the game, and is called after the player buy-in screen'''
 
@@ -13,7 +12,7 @@ class BlackJack:
         self.table = "______________"
         self.screen_height, self.screen_width = self.stdscr.getmaxyx()
         self.card = Card()
-        self.bettingOptions = ["$1", "$10", '$50', "$100"]
+        self.bettingOptions = ["$2", "$10", '$50', "$100"]
         self.playerOptions = ["Hit me", "Pass"]
         self.bettingCol = 0
         self.actionCol = 0
@@ -93,14 +92,15 @@ class BlackJack:
         y += 1
         self.stdscr.addstr(y, x, self.table)
 
-        space = (self.screen_width - len(self.players) *
-                 len(self.table)) / (len(self.players) + 1)
+        space = int((self.screen_width - len(self.players) *
+                     len(self.table)) / (len(self.players) + 1))
 
         x = space
 
         for player in self.players:
             y = self.screen_height * 2 // 4
-            self.stdscr.addstr(y, x, "Player " + str(player.id), curses.A_BOLD)
+            self.stdscr.addstr(y, x, "Player " +
+                               str(player.id), curses.A_BOLD)
             for i in player.cardList:
                 y += 1
                 cardText = str(i)
