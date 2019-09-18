@@ -61,7 +61,7 @@ class MenuDisplay:
 
     def printChosen(self):
         self.printCenter(
-            "You selected '{}'".format(self.menu[self.currentRow] + " Press any key."))
+            "You selected '{}'".format(self.menu[self.currentRow]) + " Press any key.")
         self.numOfChosenPlayers = self.currentRow + 1
         self.stdscr.getch()
 
