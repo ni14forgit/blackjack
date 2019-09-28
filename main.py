@@ -10,7 +10,7 @@ class MenuDisplay:
         self.menu = ['1 Player', '2 Players', '3 Players', 'Exit']
         self.money = ["$500", "$300", "$200", "$100"]
         self.playerChoices = ['1 Player', '2 Players', '3 Players', 'Exit']
-        self.title = "Welcome to KP Blackjack - Choose Number of Players"
+        self.title = "Welcome to Blackjack - Choose Number of Players"
         self.currentRow = 0
         self.mydict = {'1': 'ONE', "2": "TWO", "3": "THREE"}
         self.players = 0
